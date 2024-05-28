@@ -1,0 +1,61 @@
+<div class="row m-0 p-4">
+  <div class="col-8">
+      <div class="table-responsive">
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                      <th>Nombre</th>
+                      <th>Apellido</th>
+                      <th>Foto</th>
+                      <th>Telefono</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let c of contactos">
+                      <td>{{ c.nombre }}</td>
+                      <td>{{ c.apellido }}</td>
+                      <td>
+                          <img src="{{ c.foto }}" width="40" height="40" style="border-radius: 100%;" alt="">
+                      </td>
+                      <td>{{ c.telefono }}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+  <div class="col-4">
+      <div class="card m-auto">
+          <div class="card-body">
+              <h3 class="mb-3 text-center">Registrar contacto</h3>
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                  <mat-form-field class="w-100">
+                      <mat-label for="email">Nombre:</mat-label>
+                      <input matInput id="email" type="text" formControlName="nombre">
+                  </mat-form-field>
+                  <div class="row">
+                      <div class="col-12 col-xl-6">
+                          <mat-form-field class="w-100">
+                              <mat-label for="apellido">Apellido:</mat-label>
+                              <input matInput id="apellido" type="text" formControlName="apellido">
+                          </mat-form-field>
+                      </div>
+                      <div class="col-12 col-xl-6">
+                          <mat-form-field class="w-100">
+                              <mat-label for="foto">Foto:</mat-label>
+                              <input matInput id="foto" type="text" formControlName="foto">
+                          </mat-form-field>
+                      </div>
+                  </div>
+                  <mat-form-field class="w-100">
+                      <mat-label for="telefono">Telefono:</mat-label>
+                      <input matInput id="telefono" type="number" formControlName="telefono">
+                  </mat-form-field>
+                 
+                  <div class="d-grid">
+                      <button class="btn btn-lg btn-info" type="submit">Enviar</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

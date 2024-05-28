@@ -1,0 +1,28 @@
+<div class="row m-0 p-4 align-items-center">
+    <div class="col-6">
+        <img src="assets/4957136.jpg" class="img-fluid" alt="">
+    </div>
+    <div class="col-6">
+        <div class="card m-auto">
+            <div class="card-body">
+                <h3 class="mb-3 text-center">Login</h3>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <mat-form-field class="w-100">
+                        <mat-label for="username">Username:</mat-label>
+                        <input matInput id="username" type="text" formControlName="username">
+                    </mat-form-field>
+                    <mat-form-field class="w-100">
+                        <mat-label for="password">Password:</mat-label>
+                        <input matInput id="password" type="password" formControlName="password">
+                    </mat-form-field>
+                    <div>
+                        <p>No tienes una cuenta? <a routerLink="/register" class="text-primary">Ingresa aqui</a> </p>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-lg btn-info" type="submit">Iniciar sesion</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
